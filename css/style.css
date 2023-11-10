@@ -1,0 +1,345 @@
+/* background: linear-gradient(375deg, #dff3d9, #7a8db0); */
+
+.displaynone {
+    display: none;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body{
+    background-color: rgb(243, 243, 243);
+}
+
+header {
+    display: block;
+    transition: all 0.5s ease-in-out;
+    width: 100%;
+}
+
+.scroll-down {
+    transform: translateY(-190px);
+    transition: all 0.5s ease-in-out;
+}
+
+#content img {
+    height: 5000px;
+    width: 100%;
+}
+
+.wrapper {
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    right: -100%;
+    height: 100%;
+    width: 100%;
+    /* background: linear-gradient(375deg, #dff3d9, #7a8db0); */
+    transition: all 0.5s ease-in-out;
+    background-color: rgba(249, 250, 253, 0.591);
+    backdrop-filter: blur(100%);
+    overflow: hidden;
+}
+
+#active:checked~.wrapper {
+    /*left: 0;*/
+    right: 0;
+}
+
+.menu-btn {
+    position: absolute;
+    z-index: 11;
+    right: 60px;
+    /*left: 20px; */
+    top: 20px;
+    height: 65px;
+    width: 65px;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    color: #fff;
+    transition: all 0.3s ease-in-out;
+    /* display: block; */
+}
+
+.menu-btn span,
+.menu-btn:before,
+.menu-btn:after {
+    content: "";
+    position: absolute;
+    top: calc(50% - 5px);
+    left: 30%;
+    width: 40%;
+    border-bottom: 3px solid #000;
+    transition: transform .6s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.menu-btn:before {
+    transform: translateY(-8px);
+}
+
+.menu-btn:after {
+    transform: translateY(8px);
+}
+
+.close {
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    transition: 0.6s;
+}
+
+/* closing animation */
+#active:checked+.menu-btn span {
+    transform: scaleX(0);
+}
+
+#active:checked+.menu-btn:before {
+    transform: rotate(45deg);
+    border-color: #000000;
+}
+
+#active:checked+.menu-btn:after {
+    transform: rotate(-45deg);
+    border-color: #000000;
+}
+
+.wrapper .links {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    list-style: none;
+    text-align: center;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1;
+    align-items: center;
+    justify-content: center;
+}
+
+.links {
+    text-align: center;
+}
+
+.wrapper .links a {
+    text-align: center;
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: 500;
+    color: #000000;
+    margin: 10px auto;
+    opacity: 1;
+    width: fit-content;
+    height: fit-content;
+}
+
+.nav-link {
+    letter-spacing: 0.1em;
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding-bottom: 15px;
+    display: inline-block;
+    position: relative;
+    opacity: 1;
+    margin: 0;
+}
+
+.nav-link:after {
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    height: 3px;
+    left: 50%;
+    position: absolute;
+    background: #1a55c1;
+    transition: width 0.4s ease 0s, left 0.3s ease 0s;
+}
+
+.nav-link:hover:after {
+    width: 100%;
+    left: 0;
+}
+
+
+.nav-link:hover {
+    opacity: 1;
+}
+
+.nav-link::before {
+    transition: 300ms;
+    height: 5px;
+    content: "";
+    position: absolute;
+    background-color: #031D44;
+}
+
+#logoimgover img {
+    height: 80px;
+    width: 300px;
+}
+
+#logoimgover {
+    margin-bottom: 30px;
+    margin-top: -100px;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+
+/* Navbar Main */
+
+.navsec {
+    height: 100px;
+    width: 100%;
+    background-color: #b2dded;
+    background-image: none;
+    background-color: rgba(249, 250, 253, 0.106);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    z-index: 9;
+}
+
+.navsec button {
+    margin: auto;
+    height: 70px;
+    width: 200px;
+    font-size: 25px;
+    border-radius: 50px;
+    background: transparent;
+    border: none;
+    margin-right: 450px;
+}
+
+.navsec button:hover {
+    font-size: 30px;
+    transition: 200ms;
+    background: #8ed1ea;
+    cursor: pointer;
+}
+
+#logoimgnav {
+    margin: 15px auto auto 25px;
+    width: fit-content;
+}
+
+#logoimgnav img {
+    height: 80px;
+    width: 300px;
+}
+
+/* section1----------------------------- */
+
+#sec1 {
+    padding: 160px 100px 100px 100px;
+    background-image: url(/img/sec1bg.png);
+    background-position: top center;
+    background-size: cover;
+    height: 800px;
+    width: 100%;
+    display: flex;
+}
+
+#sec1content {
+    width: 50%;
+    height: fit-content;
+}
+
+#sec1img {
+    width: 100%;
+}
+
+#sec1img img {
+    width: 80%;
+    height: fit-content;
+    float: right;
+}
+
+/* Section 2................................ */
+
+#sec2 {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
+
+.sec2cards {
+    position: relative;
+    width: 250px;
+    margin: 20px auto;
+    color: #a8aabc;
+    border: 1px solid #a8aabc;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: white;
+    border: none;
+}
+
+.sec2cards .show {
+    position: relative;
+    height: 300px;
+    transition: transform 0.5s;
+}
+
+.sec2cards .show img {
+    /* position: absolute; */
+    position: relative;
+    width: 100px;
+    height: 100px;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.4s ease 0s, left 0.3s ease 0s;
+}
+
+.sec2cards .show h6 {
+    position: absolute;
+    font-size: 25px;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    transition: transform 0.5s;
+}
+
+.sec2cards .hide {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    padding: 28px;
+    color: #ffffff;
+    background-color: #384878;
+    transform: translateY(100%);
+    transition: transform 0.5s;
+}
+
+.sec2cards:hover .hide {
+    transform: translateY(0);
+}
+
+.sec2cards:hover .show {
+    transform: translateY(-60px);
+}
+
+.sec2cards:hover .show img {
+    width: 60px;
+}
+
+.sec2cards:hover .show h6 {
+    transform: translate(-50%, -150%);
+}
